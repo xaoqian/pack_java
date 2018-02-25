@@ -1,0 +1,54 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.<a class="baidu-highlight" href="https://www.baidu.com/s?wd=Sc&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dWnjTvrjbkuA7BmyR1uyNb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHnvP1m4nWnLPWbsnHfkP1fkrf" target="_blank">Sc</a>anner;
+ 
+ 
+public class OutToTxt {
+    private static BufferedWriter writer;
+    private static <a class="baidu-highlight" href="https://www.baidu.com/s?wd=Sc&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dWnjTvrjbkuA7BmyR1uyNb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHnvP1m4nWnLPWbsnHfkP1fkrf" target="_blank">Sc</a>anner <a class="baidu-highlight" href="https://www.baidu.com/s?wd=sc&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dWnjTvrjbkuA7BmyR1uyNb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHnvP1m4nWnLPWbsnHfkP1fkrf" target="_blank">sc</a>;
+ 
+    public static void main(String[] args) {
+        File out = new File("./Out.txt");
+        if(!out.exists()) {
+            try {
+                out.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            writer = new BufferedWriter(new FileWriter(out));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+         
+        sc = new Scanner(System.in);
+        System.out.println("请输入文本内容，输入exit结束：");
+        try {
+            writer.write(""); // 清空文本
+            String split = "";
+            while(true) {
+                String line = sc.nextLine();
+                if(line.equalsIgnoreCase("exit")) {
+                    break;
+                }
+                writer.append(split + line);
+                split = "\r\n";
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } finally {
+            if(null != writer) {
+                try {
+                    writer.flush();
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+ 
+}
