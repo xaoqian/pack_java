@@ -1,0 +1,8 @@
+
+通过已创建的对象来访问成员变量和成员方法，如下所示：
+/* 实例化对象 */
+ObjectReference = new Constructor();
+/* 访问类中的变量 */
+ObjectReference.variableName;
+/* 访问类中的方法 */
+ObjectReference.MethodName();
