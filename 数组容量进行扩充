@@ -1,0 +1,13 @@
+数组容量如果不够用可以使用 Arrays.copyOf() 进行扩容：
+Array.copy(E[] e,newLength);
+其第一个形参指的是需要扩容的数组，后面是扩容后的大小，其内部实现其实是使用了 System.arrayCopy(); 在内部重新创建一个长度为 newLength 类型是 E 的数组。
+import java.util.Arrays;  
+public class Main {
+    public static void main(String[] args) {
+        int[] a= {10,20,30,40,50};
+        a= Arrays.copyOf(a,a.length+1);
+        for(int i=0;i<a.length;i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
